@@ -6,7 +6,6 @@ import { Link } from "react-router-dom"
 import { RiVideoLine } from "react-icons/ri"
 import { BsGem } from "react-icons/bs"
 import { AiOutlineTeam } from "react-icons/ai"
-import picture from "./picture/1.png"
 import { useNavigate } from "react-router-dom";
 
 
