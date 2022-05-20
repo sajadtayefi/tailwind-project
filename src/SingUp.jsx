@@ -6,15 +6,17 @@ import { Link } from "react-router-dom"
 import { RiVideoLine } from "react-icons/ri"
 import { BsGem } from "react-icons/bs"
 import { AiOutlineTeam } from "react-icons/ai"
-
+import picture from "./picture/1.png"
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function SingUp(props) {
     const [email, setEmail] = useState("")
     const [pass, setPass] = useState("")
+    const [pass2, setPass2] = useState("")
     const [name, setName] = useState("")
-    const [showpass, setShowpass] = useState(false)
+    const navigate = useNavigate();
 
 
 
@@ -27,6 +29,14 @@ export default function SingUp(props) {
     const namehandler = (e) => {
         setName(e.target.value)
     }
+    const pass2handler = (e) => {
+        setPass2(e.target.value)
+    }
+    const backbtn = () => {
+        navigate("../")
+    }
+
+
 
     return (
         <body className=" bg-yello-100 h-full w-full  " >
@@ -50,12 +60,13 @@ export default function SingUp(props) {
                         <span>همکاری با آژانس ها</span>
                         <AiOutlineTeam className="m-1 h-5 w-5" />
                     </li>
-                    <li className="m-5 h-10 w-20 p-2 rounded-md  font-normal text-center justify-center
-                     text-white bg-blue-500 flex flex-row self-center mr-auto
-                     hover:bg-rose-500 transition-all delay-100 ease-in cursor-pointer
-                     "><Link to="../">
-                            <span>ورود  </span>
-                        </Link>
+                    <li className=" rounded-md  font-normal text-center justify-center
+                     text-white flex flex-row self-center mr-auto
+                     ">
+                        <button className="bg-blue-500 p-2 m-2 rounded-md  w-20 justify-self-center text-white
+                         hover:bg-rose-500 transition-all delay-100 ease-in" onClick={backbtn}>
+                            ورود
+                        </button>
                     </li>
                 </ul>
                 <div className="p-10 m-10 flex flex-col page ">
@@ -83,8 +94,8 @@ export default function SingUp(props) {
                             className="p-2 m-2 mx-24  rounded  w-1/6 "
                             placeholder="تکرار گذرواژه"
                             type="password"
-                            onChange={passhandler}
-                            value={pass}
+                            onChange={pass2handler}
+                            value={pass2}
                         />
                     </div>
                     <div className="flex flex-row font-serif">
@@ -105,6 +116,7 @@ export default function SingUp(props) {
                             <span className=" m-2  "> حساب گوگل </span>
                             <FaGoogle className="m-2 h-6  flex-1" />
                         </button>
+
                         <Link className="m-2 self-center mr-auto " to={"../"}>
                             <span className=" font-serif   ">
                                 حساب کاربری دارم!

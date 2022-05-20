@@ -1,11 +1,12 @@
-import { useState  } from "react"
+import { useState } from "react"
 import "./index.css"
 import { FaGoogle } from "react-icons/fa"
 import { CgMenuGridO } from "react-icons/cg"
-import { Link } from "react-router-dom"
+import { Link, useNavigate, } from "react-router-dom"
 import { RiVideoLine } from "react-icons/ri"
 import { BsGem } from "react-icons/bs"
 import { AiOutlineTeam } from "react-icons/ai"
+import SingUp from "./SingUp"
 
 
 
@@ -14,12 +15,17 @@ export default function SingIn(props) {
     const [email, setEmail] = useState("")
     const [pass, setPass] = useState("")
     const [showpass, setShowpass] = useState(false)
+    const navigate = useNavigate();
+
 
     const emailhandler = (e) => {
         setEmail(e.target.value)
     };
     const passhandler = (e) => {
         setPass(e.target.value)
+    }
+    const forwardbtn = () => {
+        navigate("../SingUp")
     }
 
     return (
@@ -44,12 +50,12 @@ export default function SingIn(props) {
                         <span>همکاری با آژانس ها</span>
                         <AiOutlineTeam className="m-1 h-5 w-5" />
                     </li>
-                    <li  className="m-5 h-10 w-20 p-2 rounded-md  font-normal text-center justify-center
-                     text-white bg-blue-500 flex flex-row self-center mr-auto
-                     hover:bg-rose-500 transition-all delay-100 ease-in cursor-pointer
-                     "><Link to="./SingUp">
-                        <span>ثبت نام  </span>
-                        </Link>
+                    <li className="rounded-md  font-normal text-center justify-center
+                     text-white   self-center mr-auto
+                     "> <button className="bg-blue-500 p-2 m-2 rounded-md  w-20 justify-self-center text-white
+                     hover:bg-rose-500 transition-all delay-100 ease-in" onClick={forwardbtn}>
+                        ثبت نام
+                        </button>
                     </li>
                 </ul>
                 <div className="p-10 m-10 flex flex-col page ">
@@ -65,7 +71,7 @@ export default function SingIn(props) {
                         type="password"
                         onChange={passhandler}
                         value={pass}
-                        
+
                     />
                     <div className="flex flex-row font-serif">
                         <button
