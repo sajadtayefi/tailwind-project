@@ -7,15 +7,15 @@
 
 
 .back {
-    background: hsla(184, 36%, 83%, 1);
+    background: hsla(199, 64%, 84%, 1);
 
-    background: radial-gradient(circle, hsla(184, 36%, 83%, 1) 83%, hsla(0, 0%, 100%, 1) 100%);
+    background: radial-gradient(circle, hsla(199, 64%, 84%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
     
-    background: -moz-radial-gradient(circle, hsla(184, 36%, 83%, 1) 83%, hsla(0, 0%, 100%, 1) 100%);
+    background: -moz-radial-gradient(circle, hsla(199, 64%, 84%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
     
-    background: -webkit-radial-gradient(circle, hsla(184, 36%, 83%, 1) 83%, hsla(0, 0%, 100%, 1) 100%);
+    background: -webkit-radial-gradient(circle, hsla(199, 64%, 84%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
     
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#C5E2E4", endColorstr="#FFFFFF", GradientType=1 );
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#BADFF0", endColorstr="#FFFFFF", GradientType=1 );
 }
 
 @tailwind utilities;

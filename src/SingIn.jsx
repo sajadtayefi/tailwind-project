@@ -1,13 +1,19 @@
 import { useState } from "react"
 import "./index.css"
 import { FaGoogle } from "react-icons/fa"
-import { CgMenuGridO } from "react-icons/cg"
 import { Link, useNavigate, } from "react-router-dom"
-import { RiVideoLine } from "react-icons/ri"
-import { BsGem } from "react-icons/bs"
-import { AiOutlineTeam } from "react-icons/ai"
-import SingUp from "./SingUp"
 
+import picture from "./picture/Frame.png"
+import sun from "./picture/sun.png"
+import otaghak from "./picture/icon/image (9) 1.png"
+import nartab from "./picture/icon/image (7) 1.png"
+import topforosh from "./picture/icon/image (2) 1.png"
+import ninighel from "./picture/icon/image (1) 1.png"
+import twonabsh from "./picture/icon/image 1.png"
+import menu from "./picture/icon/fi-rr-grid 2.png"
+import video from "./picture/icon/Vector.png"
+import coocki from "./picture/icon/fi-rr-cookie 2.png"
+import gem from "./picture/icon/Vector (1).png"
 
 
 
@@ -29,44 +35,71 @@ export default function SingIn(props) {
     }
 
     return (
-        <body className=" bg-yello-100 h-full w-full  " >
-            <div className="cotainer m-20  back ">
 
-                <ul className=" text-sky-900  font-serif font-bold flex flex-row-reverse mx-10 p-6">
+        <div className="container mx-auto m-10 back ">
 
-                    <li className="flex flex-row  m-10 items-center">
-                        <span className=""> امکانات</span>
-                        <CgMenuGridO className="h-5 w-5" />
-                    </li >
-                    <li className="m-5 flex flex-row items-center ">
-                        <span> ویدئو آموزشی</span>
-                        <RiVideoLine className="h-5 w-5" />
-                    </li>
-                    <li className="m-5 flex flex-row items-center">
-                        <span>قیمت گذاری</span>
-                        <BsGem className="m-1 h-5 w-5" />
-                    </li>
-                    <li className="m-5 flex flex-row items-center">
-                        <span>همکاری با آژانس ها</span>
-                        <AiOutlineTeam className="m-1 h-5 w-5" />
-                    </li>
-                    <li className="rounded-md  font-normal text-center justify-center
+            <ul className=" text-sky-900  font-serif font-bold flex flex-row-reverse mx-10 p-6">
+
+                <li className="m-2  flex flex-row  items-center">
+                    <span className="m-2"> امکانات</span>
+                    <img src={menu} alt="menu" />
+                </li >
+                <li className="m-2 flex flex-row items-center ">
+                    <span className="m-2"> ویدئو آموزشی</span>
+                    <img src={video} alt="video" />
+                </li>
+                <li className="m-2 flex flex-row items-center">
+                    <span className="m-2">قیمت گذاری</span>
+                    <img src={gem} alt="coocki"  />
+                </li>
+                <li className="m-2 flex flex-row items-center">
+                    <span>همکاری با آژانس ها</span>
+                    <img src={coocki} alt="coocki"  />
+                </li>
+                <li className="rounded-md  font-normal text-center justify-center
                      text-white   self-center mr-auto
                      "> <button className="bg-blue-500 p-2 m-2 rounded-md  w-20 justify-self-center text-white
                      hover:bg-rose-500 transition-all delay-100 ease-in" onClick={forwardbtn}>
                         ثبت نام
-                        </button>
-                    </li>
-                </ul>
-                <div className="p-10 m-10 flex flex-col page ">
+                    </button>
+                </li>
+            </ul>
+            <form className="flex flex-row ">
+                <div className="flex flex-col  w-2/5 ">
+                    <div className=" self-center ml-52 " >
+                        <img src={sun} alt="sun" />
+                    </div>
+                    <div className=" self-center m-10" >
+                        <img src={picture} alt="picture" />
+                    </div>
+                    <h5 className="self-center text-blue-900 font-bold font-serif"> بیزنس‌های بزرگی از سراسر ایران سرافراز</h5>
+                    <div className="flex flex-row m-10 w-full">
+                        <div className="w-full">
+                            <img  src={otaghak} alt="otaghak" />
+                        </div>
+                        <div className="w-full" >
+                            <img  src={nartab} alt="nartab" />
+                        </div>
+                        <div className="w-full">
+                            <img  src={topforosh} alt="topforosh" />
+                        </div>
+                        <div className="w-full">
+                            <img  src={ninighel} alt="topforosh" />
+                        </div>
+                        <div className="w-full">
+                            <img  src={twonabsh} alt="topforosh" />
+                        </div>
+                    </div>
+                </div>
+                <div className="m-10 flex flex-col page w-3/5  self-center">
                     <input type="email"
-                        className="p-2 m-2 rounded w-2/5 "
+                        className="p-2 m-2 rounded w-4/5 "
                         onChange={emailhandler}
                         placeholder="ایمیل"
                         value={email}
                     />
                     <input
-                        className="p-2 m-2   rounded  w-2/5 "
+                        className="p-2 m-2   rounded  w-4/5 "
                         placeholder="گذرواژه"
                         type="password"
                         onChange={passhandler}
@@ -91,14 +124,14 @@ export default function SingIn(props) {
                             <span className=" m-2  "> حساب گوگل </span>
                             <FaGoogle className="m-2 h-6  flex-1" />
                         </button>
-                        <Link className="m-2 self-center mr-auto " to={"#"}>
-                            <span className=" font-serif   ">
+                        <Link className=" font-serif self-center   w-full " to={"./forgot"}>
+                            <span className=" mr-72">
                                 گذرواژه خود را فراموش کرده اید؟
                             </span>
                         </Link>
                     </div>
                 </div>
-            </div>
-        </body>
+            </form>
+        </div>
     )
 }
